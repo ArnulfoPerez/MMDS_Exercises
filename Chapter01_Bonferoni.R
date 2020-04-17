@@ -22,7 +22,7 @@ suspects <- function(d=2,p=2){
   days <- 1e3
   pr <- .01
   hotels <- 1e5
-  p_same_hotel <- pr^p/hotels
+  p_same_hotel <- (pr/hotels)^p * hotels
   d_days_same_hotel <- p_same_hotel^d
   choose_p <-people^p/factorial(p)
   choose_d <- days^d/factorial(d)
@@ -30,7 +30,7 @@ suspects <- function(d=2,p=2){
   expected_events
 }
 
-suspects(d=2,p=2)/hotels^0
-suspects(d=2,p=3)/hotels^2
-suspects(d=3,p=2)/hotels^0
-suspects(d=3,p=3)/hotels^3
+suspects(d=2,p=2)
+suspects(d=2,p=3)
+suspects(d=3,p=2)
+suspects(d=3,p=3)
